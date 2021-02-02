@@ -9,8 +9,8 @@ export class AppComponent implements OnInit {
   
   title = 'demo';
   
-  column:any;
-  data:any;
+  column:any=["Id","Name","Age","Gender"];
+  data:any=[]
 constructor(){
 
 }
@@ -36,7 +36,7 @@ onFileChange(event:any) {
 }
 dataBinding(data:any){
   /** data binding Grid */
-  console.log(typeof data)
+  console.log(data)
   let first=data[0];
   let col=Object.keys(first);
  
@@ -47,5 +47,6 @@ dataBinding(data:any){
 
 
 }
+
 
 }
