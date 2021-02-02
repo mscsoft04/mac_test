@@ -3,11 +3,20 @@
 </div>
     
 
+<table class="table" id="customers">
+    <thead>
+      <tr>
+        <th class="text-left" *ngFor="let col of column">
+          {{col}}
+        </th>                                                                        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of data; let i=index">
+        <td *ngFor="let col of column">
+          {{ row[col] }}
+        </td>
+      </tr>                                                                        
+    </tbody>                                    
+  </table>
 
-<ag-grid-angular
-    style="width:auto; height: 500px;"
-    class="ag-theme-alpine"
-    [rowData]="rowData"
-    [columnDefs]="columnDefs"
->
-</ag-grid-angular>

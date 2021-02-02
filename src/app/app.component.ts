@@ -9,18 +9,8 @@ export class AppComponent implements OnInit {
   
   title = 'demo';
   
-  columnDefs = [
-    {headerName: 'Id', field: 'Id'},
-    {headerName: 'Country', field: 'Country'},
-    {headerName: 'Population (Crores)', field: 'Population (Crores)'},
-    {headerName: 'Area (sqkm)', field: 'Area (sqkm)'},
-    {headerName: 'National Language', field: 'National Language'},
-    {headerName: 'Capital', field: 'Capital'},
-    {headerName: 'Currency', field: 'Currency'},
-   
-];
-
-rowData = [];
+  column:any;
+  data:any;
 constructor(){
 
 }
@@ -49,12 +39,9 @@ dataBinding(data:any){
   console.log(typeof data)
   let first=data[0];
   let col=Object.keys(first);
- let column = col.map((x:any) =>{
-     return {headerName:x, field:x};
-
- });
-  this.columnDefs=column;
-  this.rowData=data;
+ 
+  this.column=col;
+  this.data=data;
 
 
 
